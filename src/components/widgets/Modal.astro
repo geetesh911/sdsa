@@ -1,0 +1,27 @@
+---
+export interface Props {
+  name: string;
+  description: string;
+}
+const { name, description } = Astro.props;
+---
+
+<div class="sdsa-modal" id={name}>
+  <div class="sdsa-modal-bg sdsa-modal-exit"></div>
+  <div class="sdsa-modal-container">
+    <h1>{name}</h1>
+    <hr />
+    <p>{description}</p>
+    <button class="sdsa-modal-close sdsa-modal-exit" id={`${name}-exit-button`}
+      >x</button
+    >
+  </div>
+</div>
+
+<script is:inline define:vars={{ name }}>
+  const exitButton = document.getElementById(`${name}-exit-button`);
+  exitButton.onclick = function () {
+    const modalElem = document.getElementById(name);
+    modalElem.classList.remove("open");
+  };
+</script>

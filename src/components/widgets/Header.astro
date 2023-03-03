@@ -1,0 +1,65 @@
+---
+import Logo from "../atoms/Logo.astro";
+import ToggleMenu from "../core/ToggleMenu.astro";
+import ToggleTheme from "../core/ToggleTheme.astro";
+
+const navList = [
+  { link: "#section-home", label: "Home" },
+  { link: "#section-about", label: "About" },
+  { link: "#section-our-values", label: "Our Values" },
+  { link: "#section-team", label: "Our Team" },
+  { link: "#section-contact", label: "Contact Us" },
+];
+---
+
+<nav
+  class="navbar navbar-expand-lg navbar-dark pb_navbar pb_scrolled-light"
+  id="pb-navbar"
+>
+  <div class="container">
+    <a class="navbar-brand" href="/"><Logo /></a>
+    <ToggleMenu />
+    <div class="navbar-collapse" id="probootstrap-navbar" data-aw-toggle-menu>
+      <ul class="navbar-nav ml-auto">
+        {
+          navList.map(({ label, link }) => (
+            <li class="nav-item">
+              <a class="nav-link" href={link}>
+                {label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</nav>
+<script is:inline>
+  window.addEventListener("scroll", function () {
+    const scrollPosition = window.scrollY;
+    const navbar = document.querySelector(".pb_navbar");
+    if (scrollPosition >= 150) {
+      if (!navbar.classList.contains("scrolled")) {
+        navbar.classList.add("scrolled");
+      }
+    }
+    if (scrollPosition < 150) {
+      if (navbar.classList.contains("scrolled")) {
+        navbar.classList.remove("scrolled");
+      }
+      if (navbar.classList.contains("sleep")) {
+        navbar.classList.remove("sleep");
+      }
+    }
+    if (scrollPosition > 350) {
+      if (!navbar.classList.contains("awake")) {
+        navbar.classList.add("awake");
+      }
+    }
+    if (scrollPosition < 350) {
+      if (navbar.classList.contains("awake")) {
+        navbar.classList.remove("awake");
+      }
+    }
+  });
+</script>

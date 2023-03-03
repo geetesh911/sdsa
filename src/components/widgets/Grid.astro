@@ -1,0 +1,19 @@
+---
+import Item from "./GridItem.astro";
+
+export interface Member {
+  name: string;
+  image: string;
+  description: string;
+}
+
+export interface Props {
+  members: Member[];
+}
+
+const { members } = Astro.props;
+---
+
+<div class="grid gap-6 row-gap-5 md:grid-cols-2 lg:grid-cols-2 -mb-6">
+  {members.map((member) => <Item member={member} />)}
+</div>

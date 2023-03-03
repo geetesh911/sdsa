@@ -1,0 +1,14 @@
+---
+import data from "../../assets/static/data";
+---
+
+<section class="pb_section" data-section="our-values" id="section-our-values">
+  <div class="container">
+    <div class="row justify-content-md-center text-center mb-5">
+      <div class="col-lg-7">
+        <h2 class="mt-0 heading-border-top font-weight-normal">Our Values</h2>
+        {data.values.map((para) => <p>{para}</p>)}
+      </div>
+    </div>
+  </div>
+</section>

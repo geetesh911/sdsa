@@ -1,0 +1,30 @@
+---
+import data from "../../assets/static/data";
+---
+
+<section
+  class="pb_section pb_section_v1"
+  data-section="about"
+  id="section-about"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 pr-md-5 pr-sm-0">
+        <h2 class="mt-0 heading-border-top mb-3 font-weight-normal">
+          About SDSA Lawyers
+        </h2>
+        {data.about.map((para) => <p>{para}</p>)}
+      </div>
+      <div class="col-lg-7">
+        <div class="images">
+          <img
+            class="img1 img-fluid"
+            src="/images/about-overlay.jpg"
+            alt="free Template"
+          />
+          <img class="img2" src="/images/side image.png" alt="free Template" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

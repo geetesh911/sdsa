@@ -1,0 +1,60 @@
+---
+import Modal from "../widgets/Modal.astro";
+import data from "../../assets/static/data";
+---
+
+<section
+  class="pb_section bg-light bg-image with-overlay"
+  data-section="team"
+  id="section-team"
+  style="background-image: url(/images/about-overlay.jpg)"
+>
+  <div class="container">
+    <div class="row justify-content-md-center text-center mb-5">
+      <div class="col-lg-7">
+        <h2 class="mt-0 heading-border-top light font-weight-normal text-white">
+          Our Team
+        </h2>
+      </div>
+    </div>
+    {
+      data.team.map((arr) => (
+        <div class="row">
+          {arr.map(({ name, description, image }) => (
+            <>
+              <Modal name={name} description={description} />
+              <div class="col-md">
+                <div class="card text-center pb_card_v1 mb-4">
+                  <img
+                    class="card-img-top rounded-circle w-50 mx-auto"
+                    src={image}
+                    alt={name}
+                  />
+                  <div class="card-body">
+                    <h6 class="card-subtitle mb-2">{name}</h6>
+                    <p>
+                      <button data-modal-id={name}>Read Full Bio</button>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<script is:inline>
+  window.addEventListener("load", function () {
+    const buttons = document.querySelectorAll("[data-modal-id]");
+
+    buttons.forEach((button) => {
+      const modal = document.getElementById(button.dataset.modalId);
+      button.onclick = function () {
+        modal.classList.toggle("open");
+      };
+    });
+  });
+</script>
