@@ -45,7 +45,7 @@
     }
   }
   .nav-link {
-    font-size: 15px;
+    font-size: 1rem;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
     @include media-breakpoint-down(lg) {
@@ -300,4 +300,5 @@
 .logo {
   display: flex;
   align-items: center;
+  font-weight: bold;
 }

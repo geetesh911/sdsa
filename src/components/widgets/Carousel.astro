@@ -3,14 +3,14 @@ import "../../assets/styles/carousel.css";
 
 const images = [
   "/images/slider/01.webp",
-  "/images/slider/02.webp",
-  "/images/slider/03.webp",
-  "/images/slider/04.webp",
-  "/images/slider/05.webp",
-  "/images/slider/06.webp",
-  "/images/slider/07.webp",
-  "/images/slider/08.webp",
-  "/images/slider/09.webp",
+  // "/images/slider/02.webp",
+  // "/images/slider/03.webp",
+  // "/images/slider/04.webp",
+  // "/images/slider/05.webp",
+  // "/images/slider/06.webp",
+  // "/images/slider/07.webp",
+  // "/images/slider/08.webp",
+  // "/images/slider/09.webp",
 ];
 ---
 
@@ -19,14 +19,15 @@ const images = [
     images.map((image, index) => (
       <div class={`slide  ${index === 0 ? "current" : ""}`}>
         <img class="slide-image" src={image} alt={`slide-image-${index + 1}`} />
-        <div class="slide-cover" />
+        <div class="slide-text">Attorneys fighting</div>
+        <div class="slide-cover"></div>
       </div>
     ))
   }
 </div>
 <div class="buttons">
-  <button id="prev"><i class="fas fa-arrow-left"></i></button>
-  <button id="next"><i class="fas fa-arrow-right"></i></button>
+  <!-- <button id="prev"><i class="fas fa-arrow-left"></i></button>
+  <button id="next"><i class="fas fa-arrow-right"></i></button> -->
 </div>
 
 <script>

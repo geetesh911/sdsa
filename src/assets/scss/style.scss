@@ -660,16 +660,27 @@ a {
   height: auto;
   .slide {
     .slide-image {
-      height: 100%;
+      min-height: 100%;
       width: 100%;
     }
+    .slide-text {
+      z-index: 9999;
+      color: #fff;
+      position: absolute;
+      top: 30rem;
+      left: 35rem;
+      font-size: 3rem;
+      line-height: 1.5;
+      font-weight: 700;
+    }
     .slide-cover {
-      opacity: 0.3;
+      opacity: 0.5;
       height: 100%;
       width: 100%;
       position: absolute;
       top: 0;
       background-color: black;
+      color: #fff;
     }
   }
 }
